@@ -2,6 +2,7 @@ from sqlalchemy import String, JSON, Integer
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.orm.models.base import BaseOrmModel
+from src.orm.models.lessons import LessonsOrmModel
 
 
 class ClientsOrmModel(BaseOrmModel):
@@ -15,7 +16,7 @@ class ClientsOrmModel(BaseOrmModel):
     phone_number: Mapped[String] = mapped_column(JSON, nullable=True)
     status: Mapped[String] = mapped_column(String, default="ACTIVE")
 
-    lessons: Mapped[list[CalendarEventsOrmModel]] = relationship(  # type: ignore[name-defined]
-        secondary="events_contacts",
-        back_populates="participants_contacts",
+    lessons: Mapped[list[LessonsOrmModel]] = relationship(  # type: ignore[name-defined]
+        secondary="lessons_clients",
+        back_populates="clients",
     )
