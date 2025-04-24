@@ -1,0 +1,31 @@
+[project]
+name = "medschool-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Andrii Prodan"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+packages = [{ include = "src" }]
+package-mode = "false"
+
+[tool.poetry.dependencies]
+fastapi = "^0.115.12"
+orjson = "^3.10.16"
+loguru = "^0.7.3"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.40"}
+ruff = "^0.11.6"
+mypy = "^1.15.0"
+aiohttp = "^3.11.18"
+pytest = "^8.3.5"
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.poetry.scripts]
+app = "src.app:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
