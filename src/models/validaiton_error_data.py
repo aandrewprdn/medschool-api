@@ -1,5 +1,4 @@
 from src.models.base import BaseEntityModel
 
 
-class PydanticValidationErrorData(BaseEntityModel):
-    ...
+class PydanticValidationErrorData(BaseEntityModel): ...

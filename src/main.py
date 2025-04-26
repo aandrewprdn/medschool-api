@@ -12,12 +12,10 @@ from src.models.validaiton_error_data import PydanticValidationErrorData
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    ...
+async def lifespan(app: FastAPI): ...
 
 
-def register_routers(app: FastAPI) -> None:
-    ...
+def register_routers(app: FastAPI) -> None: ...
 
 
 def register_middlewares(app: FastAPI) -> None:
